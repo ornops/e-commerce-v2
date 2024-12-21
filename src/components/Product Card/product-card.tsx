@@ -16,13 +16,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 		<Card raised
 			variant="elevation"
 			sx={{
-				maxWidth: 450
+				width: 450,
+				height: '120%',
+				paddingTop: 2
 			}}
 		>
 			<CardMedia
-				component="img"
+				component='img'
 				image={product.image}
-				height="300"
+				sx={{
+					height: '100%'
+				}}
 			/>
 			<CardContent>
 				<Typography variant="body2" sx={{ color: 'text.secondary' }}>

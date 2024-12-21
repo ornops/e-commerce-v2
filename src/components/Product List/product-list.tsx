@@ -23,8 +23,9 @@ const ProductList: React.FC = () => {
 			sx={{
 				display: 'flex',
 				flexWrap: 'wrap',
-				gap: 5,
-				width: '100vw'
+				gap: 3,
+				width: '100vw',
+				margin: '2rem'
 			}}
 		>
 			{products.length === 0 ? (
