@@ -16,20 +16,29 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 		<Card raised
 			variant="elevation"
 			sx={{
-				width: 450,
-				height: '120%',
-				paddingTop: 2
+				width: 300, // Define consistent card width
+				display: 'flex',
+				flexDirection: 'column',
+				justifyContent: 'space-between',
+				cursor: 'pointer'
 			}}
 		>
 			<CardMedia
 				component='img'
 				image={product.image}
+				alt={product.title}
 				sx={{
-					height: '100%'
+					height: 200, // Fixed height for the image
+					objectFit: 'contain', // Ensures the image fits without distortion
 				}}
 			/>
 			<CardContent>
-				<Typography variant="body2" sx={{ color: 'text.secondary' }}>
+				<Typography
+					variant="body2"
+					sx={{
+						color: 'text.secondary',
+						textAlign: 'center',
+					}}>
 					{product.title}
 				</Typography>
 			</CardContent>

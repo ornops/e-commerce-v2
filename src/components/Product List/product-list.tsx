@@ -23,9 +23,13 @@ const ProductList: React.FC = () => {
 			sx={{
 				display: 'flex',
 				flexWrap: 'wrap',
-				gap: 3,
-				width: '100vw',
-				margin: '2rem'
+				gap: 2,
+				justifyContent: 'center', // Center-aligns cards
+				padding: 2,
+				maxWidth: '100%',
+				margin: "0 auto", // Centers the container on the page
+				boxSizing: "border-box", // Includes padding in width calculations
+				overflowX: "hidden", // Prevent horizontal scroll
 			}}
 		>
 			{products.length === 0 ? (
