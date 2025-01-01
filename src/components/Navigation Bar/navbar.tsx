@@ -66,8 +66,8 @@ const Navbar = () => {
 				{/* Desktop menu items */}
 				<Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
 					<Button color="inherit">Home</Button>
-					<Button color="inherit">Products</Button>
-					<Button color="inherit">About</Button>
+					<Button color="inherit">Male</Button>
+					<Button color="inherit">Female</Button>
 					<Button color="inherit">Contact</Button>
 				</Box>
 
