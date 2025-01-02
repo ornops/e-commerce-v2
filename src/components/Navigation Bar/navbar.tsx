@@ -87,8 +87,8 @@ const Navbar = () => {
 				sx={{ display: { xs: "block", md: "none" } }}
 			>
 				<MenuItem onClick={handleMenuClose}>Home</MenuItem>
-				<MenuItem onClick={handleMenuClose}>Products</MenuItem>
-				<MenuItem onClick={handleMenuClose}>About</MenuItem>
+				<MenuItem onClick={handleMenuClose}>Male</MenuItem>
+				<MenuItem onClick={handleMenuClose}>Female</MenuItem>
 				<MenuItem onClick={handleMenuClose}>Contact</MenuItem>
 			</Menu>
 		</AppBar>
