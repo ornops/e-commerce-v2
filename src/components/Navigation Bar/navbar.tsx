@@ -80,7 +80,7 @@ const Navbar = () => {
 			</Toolbar>
 
 			{/* Mobile dropdown menu */}
-			<Menu
+			{/* <Menu
 				anchorEl={anchorEl}
 				open={Boolean(anchorEl)}
 				onClose={handleMenuClose}
@@ -90,7 +90,7 @@ const Navbar = () => {
 				<MenuItem onClick={handleMenuClose}>Male</MenuItem>
 				<MenuItem onClick={handleMenuClose}>Female</MenuItem>
 				<MenuItem onClick={handleMenuClose}>Contact</MenuItem>
-			</Menu>
+			</Menu> */}
 		</AppBar>
 	);
 };
