@@ -22,6 +22,7 @@ import {
 	MenuItem,
 	Menu,
 	Button,
+	Avatar
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -39,7 +40,10 @@ const Navbar = () => {
 
 	return (
 		<AppBar position="static" sx={{ backgroundColor: "#1976d2", width: '100vw' }}>
-			<Toolbar>
+			<Toolbar sx={{
+				display: "flex",
+				justifyContent: "space-between"
+			}}>
 				{/* Mobile menu icon */}
 				<IconButton
 					edge="start"
@@ -52,22 +56,22 @@ const Navbar = () => {
 				</IconButton>
 
 				{/* Logo */}
-				<Typography
-					variant="h6"
+				<Avatar
+					src="/src/assets/images/logo.png"
+					alt="Logo"
 					sx={{
-						flexGrow: 1,
-						textAlign: { xs: "center", md: "left" },
+						height: 40,
+						width: 40,
+						marginRight: 2,
 						cursor: "pointer",
 					}}
-				>
-					MyShop
-				</Typography>
+				/>
 
 				{/* Desktop menu items */}
 				<Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
 					<Button color="inherit">Home</Button>
-					<Button color="inherit">Male</Button>
-					<Button color="inherit">Female</Button>
+					<Button color="inherit">Men</Button>
+					<Button color="inherit">Women</Button>
 					<Button color="inherit">Contact</Button>
 				</Box>
 
