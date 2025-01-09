@@ -24,6 +24,7 @@ import {
 	Button,
 	Avatar
 } from "@mui/material";
+import { Link } from 'react-router-dom'
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -69,9 +70,9 @@ const Navbar = () => {
 
 				{/* Desktop menu items */}
 				<Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
-					<Button color="inherit">All</Button>
-					<Button color="inherit">Men</Button>
-					<Button color="inherit">Women</Button>
+					<Link to="/"><Button color="inherit">All</Button></Link>
+					<Link to="/men"><Button color="inherit">Men</Button></Link>
+					<Link to="/women"><Button color="inherit">Women</Button></Link>
 				</Box>
 
 				{/* Shopping cart icon */}
