@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box, Typography } from "@mui/material";
 import Navbar from '../components/Navigation Bar/navbar';
 const MensPage: React.FC = () => {
+	useEffect(() => {
+
+	});
+
+
 	return (
 		<Box>
 			<Navbar />
