@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Typography, Card, CardContent } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Navbar from '../components/Navigation Bar/navbar';
+import ProductCard from '../components/Product Card/product-card';
 const WomensPage: React.FC = () => {
 	const [products, setProducts] = useState<any[]>([]);
 	const [loading, setLoading] = useState(true);
@@ -26,15 +27,24 @@ const WomensPage: React.FC = () => {
 			{loading ? (
 				<Typography>Loading products...</Typography>
 			) : (
-				<Box display="flex" flexWrap="wrap" gap={2}>
-					{products.map(product => (
-						<Card key={product.id} sx={{ width: 250 }}>
-							<CardContent>
-								<Typography variant="h6">{product.title}</Typography>
-								<Typography variant="body2">${product.price}</Typography>
-							</CardContent>
-						</Card>
-					))}
+				<Box
+					sx={{
+						display: 'flex',
+						flexWrap: 'wrap',
+						gap: 2,
+						justifyContent: 'center', // Center-aligns cards
+						padding: 2,
+						maxWidth: '100%',
+						margin: "0 auto", // Centers the container on the page
+						boxSizing: "border-box", // Includes padding in width calculations
+						overflowX: "hidden", // Prevent horizontal scroll
+					}}
+				>
+					{products.length === 0 ? (
+						<p>No products available.</p>
+					) : (
+						products.map((product) => <ProductCard key={product.id} product={product}></ProductCard>)
+					)}
 				</Box>
 			)}
 		</Box>
