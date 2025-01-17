@@ -20,12 +20,17 @@ const MensPage: React.FC = () => {
 
 	return (
 
-		<Box>
+		<Box sx={{
+			display: "flex",
+			flexDirection: "column",
+
+
+		}}>
 			<Navbar />
 			<Typography variant='h1'>Men's Wear</Typography>
 
 			{loading ? (
-				<Typography>Loading products...</Typography>
+				<Typography>Loading Products...</Typography>
 			) : (
 				<Box
 					sx={{

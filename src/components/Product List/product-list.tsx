@@ -30,10 +30,11 @@ const ProductList: React.FC = () => {
 				margin: "0 auto", // Centers the container on the page
 				boxSizing: "border-box", // Includes padding in width calculations
 				overflowX: "hidden", // Prevent horizontal scroll
+				paddingTop: '70px'
 			}}
 		>
 			{products.length === 0 ? (
-				<p>No products available.</p>
+				<p>Loading Products...</p>
 			) : (
 				products.map((product) => <ProductCard key={product.id} product={product}></ProductCard>)
 			)}

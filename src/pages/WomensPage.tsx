@@ -22,10 +22,10 @@ const WomensPage: React.FC = () => {
 
 		<Box>
 			<Navbar />
-			<Typography variant='h1'>Men's Wear</Typography>
+			<Typography variant='h1'>Women's Wear</Typography>
 
 			{loading ? (
-				<Typography>Loading products...</Typography>
+				<Typography>Loading Products...</Typography>
 			) : (
 				<Box
 					sx={{
