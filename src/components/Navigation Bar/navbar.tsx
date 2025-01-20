@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
 			}}>
 
 				{/* Logo */}
-				<Avatar
+				<Link to="/"><Avatar
 					src="/src/assets/images/logo.png"
 					alt="Logo"
 					sx={{
@@ -30,7 +30,8 @@ const Navbar: React.FC = () => {
 						marginRight: 2,
 						cursor: "pointer",
 					}}
-				/>
+				/></Link>
+
 				{/* Desktop menu items */}
 				<Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
 					<Link to="/"><Button sx={{ color: '#fff' }}>All</Button></Link>
