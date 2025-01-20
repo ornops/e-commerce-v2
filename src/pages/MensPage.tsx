@@ -51,7 +51,8 @@ const MensPage: React.FC = () => {
 						margin: "0 auto", // Centers the container on the page
 						boxSizing: "border-box", // Includes padding in width calculations
 						overflowX: "hidden", // Prevent horizontal scroll
-						paddingTop: '70px'
+
+
 
 					}}
 				>

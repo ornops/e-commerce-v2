@@ -2,10 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -27,11 +24,11 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   display: flex;
-  place-items: normal start;
+  /* place-items: normal start; */
+  justify-content: center;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
