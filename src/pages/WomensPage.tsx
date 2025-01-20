@@ -22,7 +22,9 @@ const WomensPage: React.FC = () => {
 
 		<Box>
 			<Navbar />
-			<Typography variant='h1'>Women's Wear</Typography>
+			<Typography variant='h1' sx={{
+				fontSize: '40px',
+			}}>Women's Wear</Typography>
 
 			{loading ? (
 				<Typography>Loading Products...</Typography>

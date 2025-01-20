@@ -25,12 +25,20 @@ const MensPage: React.FC = () => {
 			flexDirection: "column",
 
 
+
 		}}>
 			<Navbar />
-			<Typography variant='h1'>Men's Wear</Typography>
+			<Typography variant='h1' sx={{
+				fontSize: '40px',
+
+
+			}}>Men's Wear</Typography>
 
 			{loading ? (
-				<Typography>Loading Products...</Typography>
+				<Typography sx={{
+					margin: 0,
+					padding: 0
+				}}>Loading Products...</Typography>
 			) : (
 				<Box
 					sx={{
@@ -43,6 +51,8 @@ const MensPage: React.FC = () => {
 						margin: "0 auto", // Centers the container on the page
 						boxSizing: "border-box", // Includes padding in width calculations
 						overflowX: "hidden", // Prevent horizontal scroll
+						paddingTop: '70px'
+
 					}}
 				>
 					{products.length === 0 ? (
