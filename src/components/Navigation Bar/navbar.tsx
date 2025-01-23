@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
 
 				{/* Desktop menu items */}
 				<Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
-					<Link to="/"><Button sx={{ color: '#fff' }}>All</Button></Link>
+					<Link to="/" ><Button sx={{ color: '#fff' }}>All</Button></Link>
 					<Link to="/men"><Button sx={{ color: '#fff' }}>Men</Button></Link>
 					<Link to="/women"><Button sx={{ color: '#fff' }}>Women</Button></Link>
 				</Box>
@@ -43,7 +43,9 @@ const Navbar: React.FC = () => {
 				{/* Shopping cart icon */}
 				<IconButton size="large" color="inherit">
 					<Badge badgeContent={4} color="error">
-						<ShoppingCartIcon />
+						<Link to="/cart" style={{ textDecoration: 'none' }}><ShoppingCartIcon /></Link>
+
+
 					</Badge>
 				</IconButton>
 			</Toolbar>
