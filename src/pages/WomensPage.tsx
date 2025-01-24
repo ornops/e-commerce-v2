@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Typography } from "@mui/material";
 import Navbar from '../components/Navigation Bar/navbar';
+import { Link } from 'react-router-dom'
 import ProductCard from '../components/Product Card/product-card';
 const WomensPage: React.FC = () => {
 	const [products, setProducts] = useState<any[]>([]);
@@ -45,7 +46,7 @@ const WomensPage: React.FC = () => {
 					{products.length === 0 ? (
 						<p>No products available.</p>
 					) : (
-						products.map((product) => <ProductCard key={product.id} product={product}></ProductCard>)
+						products.map((product) => <Link to={"/" + product.id}><ProductCard key={product.id} product={product}></ProductCard></Link>)
 					)}
 				</Box>
 			)}

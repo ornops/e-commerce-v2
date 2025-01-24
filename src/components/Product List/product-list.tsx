@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Product } from "../../types/Product";
 import { fetchProduct } from "../../services/productService";
 import ProductCard from "../Product Card/product-card";
+import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
 
 
@@ -36,7 +37,7 @@ const ProductList: React.FC = () => {
 			{products.length === 0 ? (
 				<p>Loading Products...</p>
 			) : (
-				products.map((product) => <ProductCard key={product.id} product={product}></ProductCard>)
+				products.map((product) => <Link to={"/" + product.id}><ProductCard key={product.id} product={product}></ProductCard></Link>)
 			)}
 		</Box>
 	);
