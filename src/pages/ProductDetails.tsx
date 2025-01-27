@@ -25,7 +25,9 @@ const ProductDetails: React.FC = () => {
 				(
 					<Box>
 						<Typography variant='h1'>{productDetails.title}</Typography>
+						<Typography>{productDetails.category}</Typography>
 						<Typography>{productDetails.description}</Typography>
+						<Typography>{productDetails.price}</Typography>
 						<CardMedia
 							component='img'
 							image={productDetails.image}
