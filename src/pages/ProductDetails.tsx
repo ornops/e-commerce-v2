@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { Box, Typography, CardMedia } from "@mui/material";
+import { Box, Typography, CardMedia, Stack, Button } from "@mui/material";
 import Navbar from '../components/Navigation Bar/navbar';
 
 const ProductDetails: React.FC = () => {
@@ -23,19 +23,42 @@ const ProductDetails: React.FC = () => {
 
 			{productDetails ?
 				(
-					<Box>
-						<Typography variant='h1'>{productDetails.title}</Typography>
-						<Typography>{productDetails.category}</Typography>
-						<Typography>{productDetails.description}</Typography>
-						<Typography>{productDetails.price}</Typography>
+					<Box sx={{
+						display: 'flex'
+					}}>
 						<CardMedia
 							component='img'
 							image={productDetails.image}
 							sx={{
-								height: 200, // Fixed height for the image
-								objectFit: 'contain', // Ensures the image fits without distortion
+								width: { xs: '100%', md: '40%' },
+								height: 'auto',
+								objectFit: 'contain',
+								borderRadius: 2,
+								boxShadow: 3,
+								// height: 200, // Fixed height for the image
+								// objectFit: 'contain', // Ensures the image fits without distortion
 							}}
 						/>
+						<Box>
+							<Typography variant='h4' fontWeight='bold'>{productDetails.title}</Typography>
+							<Typography variant='subtitle1' color='text.secondary'>{productDetails.category}</Typography>
+							<Typography variant='body1' color='text.secondary'>{productDetails.description}</Typography>
+							<Typography variant='h5' color='text.secondary' fontWeight="bold">{productDetails.price}</Typography>
+
+
+							<Stack direction="row" spacing={2} sx={{ marginTop: 2 }}>
+								<Button variant="contained" color="primary">
+									Add to Cart
+								</Button>
+								<Button variant="outlined" color="secondary">
+									Buy Now
+								</Button>
+							</Stack>
+						</Box>
+
+
+
+
 
 					</Box>
 				) : null
