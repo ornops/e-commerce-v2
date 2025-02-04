@@ -4,8 +4,16 @@ import { Box, Typography, CardMedia, Stack, Button } from "@mui/material";
 import Navbar from '../components/Navigation Bar/navbar';
 
 const ProductDetails: React.FC = () => {
+	type ProductDetails = {
+		image: string,
+		title: string,
+		description: string,
+		price: number
+	}
+
+
 	const { id } = useParams();
-	const [productDetails, setProductDetails] = useState<any[]>([]);
+	const [productDetails, setProductDetails] = useState<ProductDetails | null>(null);
 	// const [loading, setLoading] = useState(true);
 	useEffect(() => {
 
@@ -15,7 +23,11 @@ const ProductDetails: React.FC = () => {
 				setProductDetails(data);
 				// setLoading(false);
 			})
-	}, [])
+			.catch(error => {
+				console.error("Error fetching product details:", error);
+				// setLoading(false);
+			});
+	}, [id])
 
 	return (
 		<Box>
@@ -28,7 +40,7 @@ const ProductDetails: React.FC = () => {
 					}}>
 						<CardMedia
 							component='img'
-							image={productDetails.image}
+							image={productDetails?.image}
 							sx={{
 								width: { xs: '100%', md: '40%' },
 								height: '75vh',
@@ -47,9 +59,9 @@ const ProductDetails: React.FC = () => {
 							gap: 2,
 							margin: '5rem'
 						}}>
-							<Typography variant='h4' fontWeight='bold'>{productDetails.title}</Typography>
-							<Typography variant='body1' color='text.secondary'>{productDetails.description}</Typography>
-							<Typography variant='h5' color='text.secondary' fontWeight="bold">{productDetails.price}</Typography>
+							<Typography variant='h4' fontWeight='bold'>{productDetails?.title}</Typography>
+							<Typography variant='body1' color='text.secondary'>{productDetails?.description}</Typography>
+							<Typography variant='h5' color='text.secondary' fontWeight="bold">{productDetails?.price}</Typography>
 
 
 							<Stack direction="row" spacing={2} sx={{
