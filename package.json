@@ -2,7 +2,7 @@
   "name": "e-commerce-v2",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.com/ornops/e-commerce-v2",
+  "homepage": "https://ornops.github.io/e-commerce-v2",
   "type": "module",
   "scripts": {
     "dev": "vite",
