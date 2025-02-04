@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
 			}}>
 
 				{/* Logo */}
-				<Link to="/">
+				<Link to="/e-commerce-v2/">
 					<Avatar
 						src="/src/assets/images/logo.png"
 						alt="Logo"
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
 
 				{/* Desktop menu items */}
 				<Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
-					<Link to="/" ><Button sx={{ color: '#fff' }}>All</Button></Link>
+					<Link to="/e-commerce-v2/" ><Button sx={{ color: '#fff' }}>All</Button></Link>
 					<Link to="/men"><Button sx={{ color: '#fff' }}>Men</Button></Link>
 					<Link to="/women"><Button sx={{ color: '#fff' }}>Women</Button></Link>
 				</Box>
