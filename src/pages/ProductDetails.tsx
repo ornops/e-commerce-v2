@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Box, Typography, CardMedia, Stack, Button } from "@mui/material";
 import Navbar from '../components/Navigation Bar/navbar';
 
@@ -31,25 +31,40 @@ const ProductDetails: React.FC = () => {
 							image={productDetails.image}
 							sx={{
 								width: { xs: '100%', md: '40%' },
-								height: 'auto',
+								height: '75vh',
 								objectFit: 'contain',
 								borderRadius: 2,
 								boxShadow: 3,
+								marginTop: '5rem'
 								// height: 200, // Fixed height for the image
 								// objectFit: 'contain', // Ensures the image fits without distortion
 							}}
 						/>
-						<Box>
+						<Box sx={{
+							flex: 1,
+							display: 'flex',
+							flexDirection: 'column',
+							gap: 2,
+							margin: '5rem'
+						}}>
 							<Typography variant='h4' fontWeight='bold'>{productDetails.title}</Typography>
-							<Typography variant='subtitle1' color='text.secondary'>{productDetails.category}</Typography>
 							<Typography variant='body1' color='text.secondary'>{productDetails.description}</Typography>
 							<Typography variant='h5' color='text.secondary' fontWeight="bold">{productDetails.price}</Typography>
 
 
-							<Stack direction="row" spacing={2} sx={{ marginTop: 2 }}>
-								<Button variant="contained" color="primary">
-									Add to Cart
-								</Button>
+							<Stack direction="row" spacing={2} sx={{
+								marginTop: 2,
+								display: 'flex',
+								alignItems: 'center',
+								justifyContent: 'center',
+
+							}}>
+								<Link to="/cart">
+									<Button variant="contained" color="primary">
+										Add to Cart
+									</Button>
+								</Link>
+
 								<Button variant="outlined" color="secondary">
 									Buy Now
 								</Button>

@@ -20,7 +20,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 				display: 'flex',
 				flexDirection: 'column',
 				justifyContent: 'space-between',
-				cursor: 'pointer'
+				cursor: 'pointer',
+				height: '35vh'
 			}}
 		>
 			<CardMedia
@@ -30,6 +31,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 				sx={{
 					height: 200, // Fixed height for the image
 					objectFit: 'contain', // Ensures the image fits without distortion
+					marginTop: '2rem'
 				}}
 			/>
 			<CardContent>

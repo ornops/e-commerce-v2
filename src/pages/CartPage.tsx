@@ -6,7 +6,7 @@ const CartPage: React.FC = () => {
 	return (
 		<Box>
 			<Navbar />
-			<Typography>My Cart</Typography>
+			<Typography>Cart Page</Typography>
 		</Box>
 	)
 }
