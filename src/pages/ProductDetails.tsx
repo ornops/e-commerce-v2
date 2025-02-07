@@ -5,6 +5,7 @@ import Navbar from '../components/Navigation Bar/navbar';
 
 const ProductDetails: React.FC = () => {
 	type ProductDetails = {
+		id: number,
 		image: string,
 		title: string,
 		description: string,
