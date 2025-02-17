@@ -2,31 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box, Typography, CardMedia, Stack, Button } from "@mui/material";
 import Navbar from '../components/Navigation Bar/navbar';
+import { ProductDetail } from '../types/Product';
+import { fetchProductDetails } from '../services/productService';
 
 const ProductDetails: React.FC = () => {
-	type ProductDetails = {
-		id: number;
-		image: string;
-		title: string;
-		description: string;
-		price: number;
-	};
 
 	const { id } = useParams();
-	const [productDetails, setProductDetails] = useState<ProductDetails | null>(null);
+	const [productDetails, setProductDetails] = useState<ProductDetail | null>(null);
 
 	useEffect(() => {
-		fetch("https://fakestoreapi.com/products/" + id)
-			.then(response => response.json())
-			.then(data => setProductDetails(data))
-			.catch(error => console.error("Error fetching product details:", error));
+		fetchProductDetails(Number(id)).then(setProductDetails);
 	}, [id]);
+
 
 	// Function to add product to cart
 	const addToCart = () => {
 		if (!productDetails) return;
 
-		let cart: ProductDetails[] = JSON.parse(localStorage.getItem("cart") || "[]");
+		const cart: ProductDetail[] = JSON.parse(localStorage.getItem("cart") || "[]");
 
 		// Check if product already exists in cart
 		const existingProduct = cart.find((item) => item.id === productDetails.id);
